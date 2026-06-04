@@ -1,0 +1,20 @@
+{
+  "$schema": "https://unpkg.com/knip@6/schema.json",
+  "entry": ["src/main.js", "tests/**/*.test.js"],
+  "project": ["src/**/*.js"],
+  "ignore": ["step_archive/**", ".claude/**", "dist/**"],
+  "ignoreBinaries": ["tokei", "semgrep"],
+  "ignoreDependencies": [
+    "@axe-core/playwright",
+    "playwright",
+    "c8",
+    "rollup-plugin-visualizer",
+    "@lhci/cli",
+    "knip",
+    "madge",
+    "jscpd",
+    "stylelint-config-standard",
+    "@biomejs/biome",
+    "@vitest/coverage-v8"
+  ]
+}

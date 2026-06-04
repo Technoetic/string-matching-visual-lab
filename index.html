@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#2563eb" />
+  <meta name="color-scheme" content="light" />
+  <title>문자열 매칭 비주얼 랩 — 초보자용 인터랙티브 튜토리얼</title>
+  <meta name="description" content="긴 글에서 패턴을 찾는 4대 문자열 매칭 알고리즘(Brute-force·KMP·Boyer-Moore·Rabin-Karp)을 셀 애니메이션으로 직접 조작하며 배우는 웹 튜토리얼." />
+</head>
+<body>
+  <div class="page">
+    <header class="site-header">
+      <h1 class="site-header__title">문자열 매칭 비주얼 랩</h1>
+      <p class="site-header__sub">긴 글에서 패턴을 찾는 알고리즘을, 글자 칸이 움직이는 애니메이션으로 직접 배워 보세요.</p>
+    </header>
+
+    <section class="intro">
+      <p>
+        브라우저에서 <b>Ctrl+F</b>를 누르고 단어를 입력하면, 컴퓨터는 긴 텍스트(<b>haystack</b>) 안에서
+        짧은 패턴(<b>needle</b>)이 어디 있는지 찾습니다. 카카오톡 검색, 코드 에디터의 찾기,
+        <b>grep</b>, 자동완성, 심지어 DNA 서열 분석까지 — 모두 같은 “문자열 매칭” 문제예요.
+        아래에서 텍스트와 패턴을 직접 바꿔 가며 ▶ 버튼으로 한 단계씩 따라가 보세요.
+      </p>
+    </section>
+
+    <main id="app"></main>
+
+    <footer class="site-footer">
+      <p>이 알고리즘들은 어디에 쓰일까요?</p>
+      <ul>
+        <li>브라우저·문서의 <b>Ctrl+F</b> 페이지 내 찾기</li>
+        <li>메신저(카카오톡·슬랙) 대화 검색, 코드 에디터의 Find / <b>grep</b>·ripgrep</li>
+        <li>검색창 자동완성(접두사 매칭), 표절 검사·침입 탐지(해시 기반)</li>
+        <li>생물정보학의 DNA 서열(A·C·G·T) 검색</li>
+      </ul>
+      <p>출처: Wikipedia(String-searching/KMP/Boyer–Moore/Rabin–Karp), GeeksforGeeks. 학습용 단순화 구현.</p>
+    </footer>
+  </div>
+
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>

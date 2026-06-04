@@ -1,0 +1,128 @@
+/* @MX:NOTE base: 리셋·타이포·헤더/intro·페이지 그리드(grid-areas)·푸터·반응형.
+   Swiss 미니멀, 토큰만 사용. */
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-ui);
+  font-size: var(--fs-base);
+  color: var(--text);
+  background: var(--bg);
+  line-height: 1.55;
+}
+
+.page {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: var(--sp-4) var(--sp-4) var(--sp-6);
+}
+
+/* ── header / intro ── */
+.site-header {
+  margin-bottom: var(--sp-4);
+}
+
+.site-header__title {
+  font-size: var(--fs-xl);
+  font-weight: var(--fw-bold);
+  margin: 0 0 var(--sp-2);
+  letter-spacing: -0.01em;
+}
+
+.site-header__sub {
+  color: var(--muted);
+  margin: 0;
+}
+
+.intro {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--r-2);
+  padding: var(--sp-3) var(--sp-4);
+  margin-bottom: var(--sp-4);
+}
+
+.intro p {
+  margin: 0;
+}
+
+.intro b {
+  color: var(--accent);
+}
+
+/* ── app grid ── */
+#app {
+  display: grid;
+  gap: var(--sp-4);
+  grid-template-columns: 1fr 320px;
+  grid-template-areas:
+    "control control"
+    "viz     aux"
+    "note    note"
+    "explain explain";
+
+  /* @MX:NOTE JS 마운트 전 공간을 예약해 누적 레이아웃 이동(CLS)을 줄인다(Lighthouse 측정 기반). */
+  min-height: 720px;
+}
+
+/* ── footer ── */
+.site-footer {
+  margin-top: var(--sp-5);
+  padding-top: var(--sp-4);
+  border-top: 1px solid var(--border);
+  color: var(--muted);
+  font-size: var(--fs-sm);
+}
+
+.site-footer ul {
+  margin: var(--sp-2) 0 0;
+  padding-left: var(--sp-4);
+}
+
+/* ── responsive ── */
+@media (width <= 768px) {
+  #app {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "control"
+      "viz"
+      "aux"
+      "note"
+      "explain";
+  }
+
+  .page {
+    padding: var(--sp-3) var(--sp-3) var(--sp-5);
+  }
+
+  .site-header__title {
+    font-size: var(--fs-lg);
+  }
+}
+
+@media (width <= 390px) {
+  :root {
+    --cell-w: 1.5rem;
+    --cell-h: 2.25rem;
+  }
+
+  .control__play {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+    animation: none !important;
+  }
+}
