@@ -23,7 +23,9 @@ jobs:
         with:
           node-version: 22
           cache: npm
-      - run: npm ci
+      # @MX:NOTE Vite 8(Rolldown)의 플랫폼별 네이티브 바이너리는 Windows에서 생성된 lockfile에
+      # 빠져 있어 `npm ci`(엄격)가 Linux에서 실패한다. `npm install`로 플랫폼 optional 의존성을 받는다.
+      - run: npm install --no-audit --no-fund
       - run: npm run build
       - name: Run unit tests
         run: npm run test
